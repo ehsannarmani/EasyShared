@@ -83,7 +83,7 @@ allprojects {
     }   
 ```
 
-## Step 2: Add the dependency
+## Add the dependency
 
 [![](https://jitpack.io/v/ehsannarmani/EasyShared.svg)](https://jitpack.io/#ehsannarmani/EasyShared)
 
