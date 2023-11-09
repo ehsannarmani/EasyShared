@@ -35,7 +35,7 @@
 ```kotlin
   var userId by savableInt()
 
-  phone = 43
+  userId = 43
 ```
 #### No need to do anything else.
 
