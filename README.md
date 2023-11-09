@@ -33,9 +33,9 @@
   token = "xxxxx"
 ```
 ```kotlin
-  var phone by savableInt()
+  var userId by savableInt()
 
-  phone = 123456789
+  phone = 43
 ```
 #### No need to do anything else.
 
