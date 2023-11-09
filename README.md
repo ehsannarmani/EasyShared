@@ -35,7 +35,7 @@
 ```kotlin
   var phone by savableInt()
 
-  phone = "000000000"
+  phone = 123456789
 ```
 #### No need to do anything else.
 
