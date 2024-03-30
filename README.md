@@ -50,13 +50,16 @@
 
 ```kotlin
   var token:String by savable("auth_token")
+  var user:User by savable(defaultValue = User(id = -1,name = "empty user"))
 
   Button(onClick = {
       token = UUID.randomUUID().toString()
+      user = User(id = 342, name = "Iran")
   }) {
      Text(text = "Set")
   }
   Button(onClick = {
+      println(user.name)
       Toast.makeText(context, token, Toast.LENGTH_SHORT).show()
   }) {
       Text(text = "Get")
