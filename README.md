@@ -39,6 +39,12 @@
 ```
 #### No need to do anything else.
 
+### Saving Objects & ListOf Them
+```kotlin
+  data class Person(val id:Int,val name:String)
+
+  val persons:List<Person> by savable(defauleValue = emptyList())
+```
 
 ## Final Sample In Jetpack Compose:
 
