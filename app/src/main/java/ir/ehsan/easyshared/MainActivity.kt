@@ -26,17 +26,11 @@ import com.ehsannarmani.easyshared.savable
 import com.ehsannarmani.easyshared.savableInt
 import com.ehsannarmani.easyshared.savableLong
 import com.ehsannarmani.easyshared.savableString
-import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
 import ir.ehsan.easyshared.ui.theme.EasySharedTheme
 import java.util.UUID
 
 
-data class Person(val id:Int,val name:String){
-    companion object{
-        val Empty = Person(id = -1,name = "")
-    }
-}
+data class Person(val id:Int,val name:String)
 
 class MainActivity : ComponentActivity() {
 
