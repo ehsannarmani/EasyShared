@@ -20,12 +20,23 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.ehsannarmani.easyshared.Json
+import com.ehsannarmani.easyshared.Json.deserialize
 import com.ehsannarmani.easyshared.savable
 import com.ehsannarmani.easyshared.savableInt
 import com.ehsannarmani.easyshared.savableLong
 import com.ehsannarmani.easyshared.savableString
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import ir.ehsan.easyshared.ui.theme.EasySharedTheme
 import java.util.UUID
+
+
+data class Person(val id:Int,val name:String){
+    companion object{
+        val Empty = Person(id = -1,name = "")
+    }
+}
 
 class MainActivity : ComponentActivity() {
 
@@ -36,6 +47,8 @@ class MainActivity : ComponentActivity() {
     private var phone by savableInt()
     private var name by savableString()
     private var timestamp by savableLong()
+
+    private var person:List<Person> by savable(defaultValue = listOf())
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -71,13 +84,16 @@ class MainActivity : ComponentActivity() {
                         .padding(32.dp), contentAlignment = Alignment.Center){
                         Column {
                             Button(onClick = {
-                                token = UUID.randomUUID().toString()
+                                person = MutableList(5){
+                                    Person(it,"ehsan $it")
+                                }
                             }) {
                                 Text(text = "Set")
                             }
                             Spacer(modifier = Modifier.height(16.dp))
                             Button(onClick = {
-                                Toast.makeText(context, token, Toast.LENGTH_SHORT).show()
+                                println("value: $person")
+                                Toast.makeText(context, "Count: ${person.count()}", Toast.LENGTH_SHORT).show()
                             }) {
                                 Text(text = "Get")
                             }

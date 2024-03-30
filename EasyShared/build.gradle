@@ -14,7 +14,7 @@ afterEvaluate {
                 // You can then customize attributes of the publication as shown below.
                 groupId = 'com.github.ehsannarmani'
                 artifactId = 'easyshared'
-                version = '0.0.1'
+                version = '0.0.2'
             }
         }
     }
@@ -43,5 +43,8 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+    dependencies {
+        implementation 'com.google.code.gson:gson:2.10.1'
     }
 }
